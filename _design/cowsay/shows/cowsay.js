@@ -71,7 +71,7 @@ function(doc, req) {
     var bubble = [top_and_bottom, ended.join("\n"),top_and_bottom].join("\n");
     return {
         headers: {
-            "Content-type": "text/plain"
+            "Content-Type": "text/plain"
         },
         body: [bubble, cow, "\n"].join("\n")
     };
