@@ -14,9 +14,16 @@ function(doc, req) {
 "            (__)\\       )\\/\\",
 "                ||----w |",
 "                ||     ||"].join("\n");
-    var say = doc.cowtext;
+    var say;
+    if (typeof doc !== "undefined" && doc !== null) {
+         say = doc.cowtext;
+    }
     if (typeof say === "undefined") {
-        say = "Nothing in document for this cow to say.";
+        if ('cowtext' in req.query) {
+            say = req.query.cowtext;
+        } else {
+            say = "Nothing for this cow to say.";
+        }
     }
     var tokens = say.split(" ");
     // Greedy wrap algorithm (sorry Knuth...)
