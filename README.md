@@ -42,9 +42,15 @@ specifying a document and provide the cowtext parameter:
 
 	http://YOUR_COUCH_URL/YOUR_DB_NAME/_design/cowsay/_show/cowsay?cowtext=moo
 
+Use the `cowtype` parameter to specify the type of cow you want to use:
+
+	http://YOUR_COUCH_URL/YOUR_DB_NAME/_design/cowsay/_show/cowsay/YOUR_DOC?cowtype=moose
+
+If the supplied `cowtype` is not found then no cow will be rendered.
+
 ## Limitations
 
-Only supports the default cow.
+Only supports two cows: default and moose.
 
 Only renders text stored in a document under the key `cowtext`, falling back
 to the value of the `cowtext` request parameter if `doc.cowtext` is
