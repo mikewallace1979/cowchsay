@@ -8,12 +8,7 @@ function(doc, req) {
         }
     };
     var wrap_to = 40;
-    var cow = [
-"        \\   ^__^",
-"         \\  (oo)\\_______",
-"            (__)\\       )\\/\\",
-"                ||----w |",
-"                ||     ||"].join("\n");
+    var cow = require("lib/cows").classic;
     var say;
     if (typeof doc !== "undefined" && doc !== null) {
          say = doc.cowtext;
