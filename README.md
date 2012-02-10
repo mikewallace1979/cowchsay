@@ -23,7 +23,7 @@ CouchApp tool you are using and push to a CouchDB instance of your choosing.
 
 Or, use [situp.py](https://github.com/drsm79/situp) to push directly:
 
-	situp.py push -d cowsay -e YOUR_DB_NAME -s YOUR_COUCH_URL
+	./situp.py push -d cowsay -e YOUR_DB_NAME -s YOUR_COUCH_URL
 
 ## Using
 
