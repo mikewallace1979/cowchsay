@@ -1,4 +1,5 @@
 function(doc, req) {
+    var cows = require("lib/cows");
     var extend_array = function(arr, token, length) {
         if (length === 0) {
             return arr;
@@ -8,7 +9,11 @@ function(doc, req) {
         }
     };
     var wrap_to = 40;
-    var cow = require("lib/cows").classic;
+    var cowtype = "classic";
+    if ("cowtype" in req.query) {
+        cowtype = req.query.cowtype;
+    }
+    var cow = cows[cowtype];
     var say;
     if (typeof doc !== "undefined" && doc !== null) {
          say = doc.cowtext;
